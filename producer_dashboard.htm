@@ -1,0 +1,37 @@
+<!-- templates/producer_dashboard.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Producer Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header class="header">
+        {% include 'partials/nav.html' %}
+    </header>
+
+    <main class="main">
+        <section class="producer-dashboard">
+            <h1 class="dashboard-title">Producer Dashboard</h1>
+            <div class="job-list">
+                {% for job in jobs %}
+                <div class="job-card">
+                    <h2 class="job-name">{{ job.name }}</h2>
+                    <p class="job-genre">Genre: {{ job.genre }}</p>
+                    <p class="job-audio">Audio Snippet: <a href="{{ job.audioSnippet }}" class="job-audio-link">Listen</a></p>
+                    <p class="job-lyrics">Lyrics: {{ job.lyrics }}</p>
+                    <p class="job-contact">Contact Info: {{ job.contactInfo }}</p>
+                    <a href="{{ url_for('job_details', job_id=job.id) }}" class="job-details-link">View Details</a>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        {% include 'partials/footer.html' %}
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

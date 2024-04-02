@@ -1,0 +1,28 @@
+<!-- templates/artist_profile.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Artist Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header class="header">
+        {% include 'partials/nav.html' %}
+    </header>
+
+    <main class="main">
+        <section class="artist-profile">
+            <h1 class="artist-name">{{ artist.name }}</h1>
+            <p class="artist-bio">{{ artist.bio }}</p>
+            <p class="artist-genre">Genre: {{ artist.genre }}</p>
+            <p class="artist-contact">Contact Info: {{ artist.contactInfo }}</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        {% include 'partials/footer.html' %}
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

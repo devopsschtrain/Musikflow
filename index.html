@@ -1,0 +1,37 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MUSIKFLOW</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="{{ url_for('index') }}">Home</a></li>
+                <li class="nav-item"><a href="{{ url_for('artist_profile') }}">Artist Profile</a></li>
+                <li class="nav-item"><a href="{{ url_for('job_submission_form') }}">Submit Job</a></li>
+                <li class="nav-item"><a href="{{ url_for('producer_dashboard') }}">Producer Dashboard</a></li>
+                <li class="nav-item"><a href="{{ url_for('calendar') }}">Calendar</a></li>
+                <li class="nav-item"><a href="{{ url_for('message_center') }}">Message Center</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="hero">
+            <h1 class="hero-title">Welcome to MUSIKFLOW</h1>
+            <p class="hero-description">Streamlining music production collaboration between artists and producers.</p>
+            <a href="{{ url_for('artist_profile') }}" class="hero-cta">Explore as an Artist</a>
+            <a href="{{ url_for('producer_dashboard') }}" class="hero-cta">Explore as a Producer</a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer-text">&copy; 2023 MUSIKFLOW. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

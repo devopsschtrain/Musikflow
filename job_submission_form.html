@@ -1,0 +1,48 @@
+<!-- templates/job_submission_form.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Job</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header class="header">
+        {% include 'partials/nav.html' %}
+    </header>
+
+    <main class="main">
+        <section class="job-submission-form">
+            <h1 class="form-title">Submit Job</h1>
+            <form method="post" action="{{ url_for('job_submission_form') }}" class="form">
+                <div class="form-group">
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" id="name" name="name" required class="form-input">
+                </div>
+                <div class="form-group">
+                    <label for="audioSnippet" class="form-label">Audio Snippet:</label>
+                    <input type="file" id="audioSnippet" name="audioSnippet" required class="form-input">
+                </div>
+                <div class="form-group">
+                    <label for="genre" class="form-label">Genre:</label>
+                    <input type="text" id="genre" name="genre" required class="form-input">
+                </div>
+                <div class="form-group">
+                    <label for="lyrics" class="form-label">Lyrics:</label>
+                    <textarea id="lyrics" name="lyrics" required class="form-textarea"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="contactInfo" class="form-label">Contact Info:</label>
+                    <input type="text" id="contactInfo" name="contactInfo" required class="form-input">
+                </div>
+                <button type="submit" class="form-submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        {% include 'partials/footer.html' %}
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

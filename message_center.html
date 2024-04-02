@@ -1,0 +1,34 @@
+<!-- templates/message_center.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Message Center</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header class="header">
+        {% include 'partials/nav.html' %}
+    </header>
+
+    <main class="main">
+        <section class="message-center">
+            <h1 class="message-center-title">Message Center</h1>
+            <div class="message-list">
+                {% for message in messages %}
+                <div class="message-card">
+                    <p class="message-sender">Sender: {{ message.sender }}</p>
+                    <p class="message-recipient">Recipient: {{ message.recipient }}</p>
+                    <p class="message-content">{{ message.content }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        {% include 'partials/footer.html' %}
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
